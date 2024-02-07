@@ -46,4 +46,8 @@ const IssuesPage = async () => {
   );
 };
 
+//Disabling Full Route Cache for Static routes(with no params)
+// export const revalidate = 0; //another way of disabling Full Route Cache for Static routes(with no params) - Number (0) is seconds
+export const dynamic = "force-dynamic";
+
 export default IssuesPage;
