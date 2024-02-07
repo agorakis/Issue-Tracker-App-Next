@@ -1,16 +1,26 @@
 "use client";
 
 import { AlertDialog, Button, Flex } from "@radix-ui/themes";
+import axios from "axios";
+import { useRouter } from "next/navigation";
 
 interface DeleteIssueButtonProps {
   issueId: number;
 }
 
 const DeleteIssueButton = ({ issueId }: DeleteIssueButtonProps) => {
-  console.log(
-    "🚀 ~ file: DeleteIssueButton.tsx:10 ~ DeleteIssueButton ~ issueId:",
-    issueId
-  );
+  
+  const router = useRouter();
+
+  const handleDelete = async (issueId: number) => {
+    try {
+      await axios.delete(`/api/issues/${issueId}/`);
+      router.push("/issues");
+      router.refresh();
+    } catch (error) {
+      console.log("An unexpected error occured.");
+    }
+  };
 
   return (
     <AlertDialog.Root>
@@ -31,7 +41,11 @@ const DeleteIssueButton = ({ issueId }: DeleteIssueButtonProps) => {
             </Button>
           </AlertDialog.Cancel>
           <AlertDialog.Action>
-            <Button variant="solid" color="red">
+            <Button
+              onClick={() => handleDelete(issueId)}
+              variant="solid"
+              color="red"
+            >
               Delete Issue
             </Button>
           </AlertDialog.Action>
