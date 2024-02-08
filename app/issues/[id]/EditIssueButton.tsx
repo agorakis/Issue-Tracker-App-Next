@@ -1,5 +1,5 @@
 import { Pencil2Icon } from "@radix-ui/react-icons";
-import { Button } from "@radix-ui/themes";
+import { Button, Text } from "@radix-ui/themes";
 import Link from "next/link";
 
 interface EditIssueButtonProps {
@@ -8,10 +8,12 @@ interface EditIssueButtonProps {
 
 const EditIssueButton = ({ issueId }: EditIssueButtonProps) => {
   return (
-    <Button>
-      <Pencil2Icon />
-      <Link href={`/issues/${issueId}/edit`}>Edit Issue</Link>
-    </Button>
+    <Link href={`/issues/${issueId}/edit`}>
+      <Button className="w-full">
+        <Pencil2Icon />
+        <Text>Edit Issue</Text>
+      </Button>
+    </Link>
   );
 };
 
