@@ -1,5 +1,5 @@
 import prisma from "@/prisma/client";
-import { Table, Text } from "@radix-ui/themes";
+import { Table, Text, Flex } from "@radix-ui/themes";
 import NextLink from "next/link";
 import IssueStatusBadge from "../../components/IssueStatusBadge";
 import Link from "../../components/Link";
@@ -40,7 +40,12 @@ const IssuesPage = async ({ searchParams }: IssuesPageProps) => {
       <IssueActions />
 
       {issues.length === 0 ? (
-        <Text>There are no issues yet!</Text>
+        <Flex justify="center" pt="8">
+          <Text size="3" weight="medium">
+            There are no issues yet. Create an issue by clicking the button "New
+            Issue".
+          </Text>
+        </Flex>
       ) : (
         <Table.Root variant="surface">
           <Table.Header>
