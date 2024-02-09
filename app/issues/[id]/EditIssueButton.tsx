@@ -8,7 +8,7 @@ interface EditIssueButtonProps {
 
 const EditIssueButton = ({ issueId }: EditIssueButtonProps) => {
   return (
-    <Link href={`/issues/${issueId}/edit`}>
+    <Link href={`/issues/edit/${issueId}`}>
       <Button className="w-full">
         <Pencil2Icon />
         <Text>Edit Issue</Text>

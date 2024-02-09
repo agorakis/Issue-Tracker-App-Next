@@ -14,7 +14,6 @@ import { Controller, useForm } from "react-hook-form";
 import SimpleMDE from "react-simplemde-editor";
 import { z } from "zod";
 
-
 type IssueFormData = z.infer<typeof issueSchema>;
 
 interface IssueFormProps {
@@ -43,7 +42,7 @@ const IssueForm = ({ issue }: IssueFormProps) => {
       } else {
         await axios.post("/api/issues", data);
       }
-      router.push("/issues");
+      router.push("/issues/list");
       router.refresh();
     } catch (error) {
       setError("An unexpected error occured.");
