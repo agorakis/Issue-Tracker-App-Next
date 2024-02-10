@@ -1,5 +1,5 @@
 import { Status } from "@prisma/client";
-import { Flex, Card, Text, Heading } from "@radix-ui/themes";
+import { Flex, Card, Text } from "@radix-ui/themes";
 import Link from "next/link";
 
 interface IssueSummaryProps {
