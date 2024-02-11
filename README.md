@@ -1,10 +1,8 @@
 # Issue-Tracker-App-Next
 
-Scope of this project was to get familiar with Next.js, Typescript, RadixUI component library, Tailwind, AxiosHTTP library, React Query library, as well as with Prisma ORM and mySQL. In addition to use Vercel cloud platform to deploy the application.
+Scope of this project was to get familiar with Next.js, Typescript, RadixUI component library, Tailwind, AxiosHTTP library, React Query library, as well as with Prisma ORM and mySQL.
 
 This project was part of a Mosh Hamedani's Next.js + Typescript course "The Ultimate Next.js Series".
-
-This project is live here:
 
 ## Getting Started
 
